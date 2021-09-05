@@ -1,18 +1,18 @@
 # The server protocol and host
-server_protocol: "http"
-server_url: "openstreetmap.example.com"
+server_protocol: "https"
+server_url: "myplanet.geofictician.net"
 # Publisher
 #publisher_url: ""
 # The generator
-generator: "OpenStreetMap server"
-copyright_owner: "OpenStreetMap and contributors"
-attribution_url: "http://www.openstreetmap.org/copyright"
-license_url: "http://opendatacommons.org/licenses/odbl/1-0/"
+generator: "geofictician (OSM fork) server"
+copyright_owner: "myplanet geofictician and contributors"
+attribution_url: "https://myplanet.geofictician.net/copyright"
+license_url: "https://opendatacommons.org/licenses/odbl/1-0/"
 # Support email address
-support_email: "openstreetmap@example.com"
+support_email: "mapadmin@myplanet.geofictician.net"
 # Sender addresses for emails
-email_from: "OpenStreetMap <openstreetmap@example.com>"
-email_return_path: "openstreetmap@example.com"
+email_from: "myplanet geofictician <mapadmin@myplanet.geofictician.net>"
+email_return_path: "mapadmin@myplanet.geofictician.net"
 # API version
 api_version: "0.6"
 # Application status - possible values are:
@@ -68,8 +68,8 @@ default_legale: GB
 # https://github.com/openstreetmap/gpx-import
 trace_use_job_queue: true
 # Location of GPX traces and images
-gpx_trace_dir: "/home/osm/traces"
-gpx_image_dir: "/home/osm/images"
+gpx_trace_dir: ":rails_root/gpx/traces"
+gpx_image_dir: ":rails_root/gpx/images"
 # Location of data for attachments
 attachments_dir: ":rails_root/public/attachments"
 # Log file to use
@@ -81,7 +81,7 @@ attachments_dir: ":rails_root/public/attachments"
 # Enable legacy OAuth 1.0 support
 oauth_10_support: true
 # URL of Nominatim instance to use for geocoding
-nominatim_url: "https://nominatim.openstreetmap.org/"
+nominatim_url: "https://myplanetnominatim.geofictician.net/"
 # Default editor
 default_editor: "id"
 # OAuth application for the web site
@@ -98,10 +98,10 @@ imagery_blacklist:
   # Blacklist here
   - ".*\\.here\\.com[/:].*"
 # URL of Overpass instance to use for feature queries
-overpass_url: "https://overpass-api.de/api/interpreter"
+overpass_url: "https://myplanetoverpass.geofictician.net/api/interpreter"
 # Routing endpoints
-graphhopper_url: "https://graphhopper.com/api/1/route"
-fossgis_osrm_url: "https://routing.openstreetmap.de/"
+graphhopper_url: "https://myplanetgraphhopper,geofictician.net/api/1/route"
+fossgis_osrm_url: "https://myplanetrouting.geofictician.net/"
 # External authentication credentials
 #google_auth_id: ""
 #google_auth_secret: ""
