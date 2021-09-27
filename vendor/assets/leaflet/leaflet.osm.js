@@ -61,6 +61,46 @@ L.OSM.HOT = L.OSM.TileLayer.extend({
   }
 });
 
+// next 5 top-level segments added by luciano 20210719
+L.OSM.OGFCarto = L.OSM.TileLayer.extend({
+  options: {
+    url: 'https://tiles04.rent-a-planet.com/ogf-carto/{z}/{x}/{y}.png',
+    maxZoom: 20,
+    attribution: '© <a href="https://opengeofiction.net" target="_blank">OpenGeofiction</a> contributors.'
+  }
+});
+
+L.OSM.Arhet2Carto = L.OSM.TileLayer.extend({
+  options: {
+    url: 'https://tiles01.rent-a-planet.com/arhet2-carto/{z}/{x}/{y}.png',
+    maxZoom: 20,
+    attribution: '© <a href="http://geofictician.net/about" target="_blank">Geofictician</a> contributors.'
+  }
+});
+
+L.OSM.ArhetTopo = L.OSM.TileLayer.extend({
+  options: {
+    url: 'https://tiles01.rent-a-planet.com/arhet-topo/{z}/{x}/{y}.png',
+    maxZoom: 17,
+    attribution: '© <a href="http://geofictician.net/about" target="_blank">Geofictician</a> contributors.'
+  }
+});
+
+L.OSM.OGFTopo = L.OSM.TileLayer.extend({
+  options: {
+    url: 'https://tiles04.rent-a-planet.com/ogf-topo/{z}/{x}/{y}.png',
+    maxZoom: 17,
+    attribution: '© <a href="https://opengeofiction.net" target="_blank">OpenGeofiction</a> contributors.'
+  }
+});
+
+L.OSM.EarthCarto = L.OSM.TileLayer.extend({
+  options: {
+    url: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
+    maxZoom: 19
+  }
+});
+
 L.OSM.GPS = L.OSM.TileLayer.extend({
   options: {
     url: 'https://gps.tile.openstreetmap.org/lines/{z}/{x}/{y}.png',

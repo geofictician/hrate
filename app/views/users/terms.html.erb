@@ -2,11 +2,11 @@
   <%= javascript_include_tag "user" %>
 <% end %>
 
-<% content_for :heading_class, "pb-0" %>
 <% content_for :heading do %>
-  <div class='header-illustration new-user-terms'>
-    <h1><%= t ".heading" %></h1>
-  </div>
+  <h1><%= t ".heading" %></h1>
+<!-- commented out BELOW 20210827 by luciano
+  <div class='header-illustration new-user-terms'></div>
+--  commented out ABOVE 20210827 by luciano -->
 <% end %>
 
 <%= form_tag({ :action => "save" }) do %>
@@ -16,9 +16,11 @@
     <%= t ".heading_ct" %>
   </h4>
   <p class="text-muted"><%= t ".contributor_terms_explain" %></p>
+<!-- commented out BELOW 20210827 by luciano
   <label>
     <%= t ".legale_select" %>
   </label>
+
   <div class="form-group">
     <% [%w[france FR], %w[italy IT], %w[rest_of_world GB]].each do |name, legale| %>
       <div class="form-check form-check-inline">
@@ -29,18 +31,20 @@
       </div>
     <% end %>
   </div>
+--  commented out ABOVE 20210827 by luciano -->
 
   <div id="contributorTerms" class="legale">
     <%= render :partial => "terms" %>
   </div>
-
+<!-- commented out BELOW 20210827 by luciano
   <div>
     <p id="contributorGuidance" class="text-muted">
       <%= t ".guidance_html",
-            :summary => "https://www.osmfoundation.org/wiki/License/Contributor_Terms_Summary",
-            :translations => "https://www.osmfoundation.org/wiki/License/Contributor_Terms/Informal_Translations" %>
+            :summary => "https://wiki.opengeofiction.net/index.php/OpenGeofiction:Contributor_Terms_Summary",
+            :translations => "https://wiki.opengeofiction.net/index.php/OpenGeofiction:Contributor_Terms_Translations" %>
     </p>
   </div>
+--  commented out ABOVE 20210827 by luciano -->
   <div class="form-group">
     <div class="form-check">
       <%= check_box_tag "read_ct", "1", false, :class => "form-check-input" %>
@@ -49,11 +53,10 @@
       </label>
     </div>
   </div>
-
   <h4>
     <%= t "layouts.tou" %>
   </h4>
-  <p class="text-muted"><%= t ".tou_explain_html", :tou_link => link_to(t("layouts.tou"), "https://wiki.osmfoundation.org/wiki/Terms_of_Use", :target => :new) %></p>
+  <p class="text-muted"><%= t ".tou_explain_html", :tou_link => link_to(t("layouts.tou"), "https://wiki.opengeofiction.net/index.php/OpenGeofiction:Terms_of_Use", :target => :new) %></p>
 
   <div class="form-group">
     <div class="form-check">
@@ -63,14 +66,13 @@
       </label>
     </div>
   </div>
-
   <%= hidden_field_tag("referer", h(params[:referer])) unless params[:referer].nil? %>
 
   <div class="form-group">
     <%= submit_tag("Continue", :name => "continue", :id => "continue", :disabled => true, :class => "btn btn-primary") %>
     <%= submit_tag("Cancel", :name => "decline", :id => "decline", :class => "btn btn-outline-secondary") %>
   </div>
-
+<!-- commented out BELOW 20210827 by luciano
   <div class="form-group">
     <div class="form-check">
       <%= check_box("user", "consider_pd", :class => "form-check-input") %>
@@ -79,4 +81,5 @@
     </label>
     <span class="minorNote">(<%= link_to(t(".consider_pd_why"), t(".consider_pd_why_url"), :target => :new) %>)</span>
   </div>
+--  commented out ABOVE 20210827 by luciano -->
 <% end %>

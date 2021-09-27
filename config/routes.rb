@@ -140,13 +140,26 @@ OpenStreetMap::Application.routes.draw do
   # web site
   root :to => "site#index", :via => [:get, :post]
   get "/edit" => "site#edit"
-  get "/copyright/:copyright_locale" => "site#copyright"
-  get "/copyright" => "site#copyright"
-  get "/welcome" => "site#welcome"
+  get "/copyright/:copyright_locale", :to => redirect("https://wiki.opengeofiction.net/index.php/Opengeofiction:Copyright") # line added 20210729 by luciano
+#  get "/copyright/:copyright_locale" => "site#copyright" # commented out 20210729 by luciano
+  get "/copyright", :to => redirect("https://wiki.opengeofiction.net/index.php/Opengeofiction:Copyright") # line added 20210729 by luciano
+#  get "/copyright" => "site#copyright" # commented out 20210729 by luciano
+  get "/blog", :to => redirect("https://blog.geofictician.net") # line added 20210729 by luciano
+#  get "/welcome" => "site#welcome" # commented out 20210828 by luciano
+  get "/welcome", :to => redirect("https://wiki.opengeofiction.net/index.php/Opengeofiction:Welcome") # line added 20210828 by luciano
   get "/fixthemap" => "site#fixthemap"
-  get "/help" => "site#help"
-  get "/about/:about_locale" => "site#about"
-  get "/about" => "site#about"
+  get "/help", :to => redirect("https://wiki.opengeofiction.net/index.php/Help:Portal") # line added 20210729 by luciano
+#  get "/help" => "site#help" # commented out 20210729 by luciano
+  get "/about/:about_locale", :to => redirect("https://wiki.opengeofiction.net/index.php/Opengeofiction:About") # line added 20210729 by luciano
+#  get "/about/:about_locale" => "site#about" # commented out 20210729 by luciano
+  get "/about", :to => redirect("https://wiki.opengeofiction.net/index.php/Opengeofiction:About") # line added 20210729 by luciano
+#  get "/about" => "site#about" # commented out 20210729 by luciano
+  get "/overpass_turbo", :to => redirect("https://ogfturbo.rent-a-planet.com") # line added 20210814 by luciano
+  get "/wiki", :to => redirect("https://wiki.opengeofiction.net") # line added 20210819 by luciano
+  get "/backups", :to => redirect("https://ogfdata.rent-a-planet.com/backups") # line added 20210829 by luciano
+  get "/replication", :to => redirect("https://ogfdata.rent-a-planet.com/replication") # line added 20210829 by luciano
+  get "/donate", :to => redirect("https://wiki.opengeofiction.net/index.php/Opengeofiction:Donate") # line added 20210914 by luciano
+  get "/privacy_policy", :to => redirect("https://wiki.opengeofiction.net/index.php/Opengeofiction:Privacy_policy") # line added 20210918 by luciano
   get "/history" => "changesets#index"
   get "/history/feed" => "changesets#feed", :defaults => { :format => :atom }
   get "/history/comments/feed" => "changeset_comments#index", :as => :changesets_comments_feed, :defaults => { :format => "rss" }
@@ -158,8 +171,11 @@ OpenStreetMap::Application.routes.draw do
   get "/key" => "site#key"
   get "/id" => "site#id"
   get "/query" => "browse#query"
-  get "/user/new" => "users#new"
-  post "/user/new" => "users#create"
+#  get "/user/new" => "user#new" # commented out 20210729 by luciano
+#  post "/user/new" => "user#create" # commented out 20210729 by luciano
+  get "/user/new", :to => redirect("https://wiki.opengeofiction.net/index.php/Opengeofiction:Getting_started") # line added 20210827 by luciano
+  get "/user/register-new-name" => "users#new" # line added 20210729 by luciano
+  post "/user/register-new-name" => "users#create" # line added 20210729 by luciano
   get "/user/terms" => "users#terms"
   post "/user/save" => "users#save"
   get "/user/:display_name/confirm/resend" => "confirmations#confirm_resend", :as => :user_confirm_resend
@@ -168,8 +184,9 @@ OpenStreetMap::Application.routes.draw do
   match "/user/confirm-email" => "confirmations#confirm_email", :via => [:get, :post]
   post "/user/go_public" => "users#go_public"
   match "/user/reset-password" => "passwords#reset_password", :via => [:get, :post], :as => :user_reset_password
-  match "/user/forgot-password" => "passwords#lost_password", :via => [:get, :post], :as => :user_forgot_password
-  get "/user/suspended" => "users#suspended"
+#  match "/user/forgot-password" => "passwords#lost_password", :via => [:get, :post], :as => :user_forgot_password # line commented out 20210829 by luciano
+  match "/user/lost-password" => "passwords#lost_password", :via => [:get, :post], :as => :user_forgot_password # line added 20210829 by luciano (temp fix for lost pw hole)
+   get "/user/suspended" => "users#suspended"
 
   get "/index.html", :to => redirect(:path => "/")
   get "/create-account.html", :to => redirect(:path => "/user/new")

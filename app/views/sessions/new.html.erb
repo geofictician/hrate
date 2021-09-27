@@ -10,7 +10,7 @@
   <p class='text-muted'><%= t ".no account" %> <%= link_to t(".register now"), user_new_path(:referer => params[:referer]) %></p>
 
   <%= bootstrap_form_tag(:action => "login", :html => { :id => "login_form" }) do |f| %>
-    <%= hidden_field_tag("referer", h(params[:referer]), :autocomplete => "off") %>
+    <%= hidden_field_tag("referer", h(params[:referer])) %>
 
     <%= f.text_field :username, :label => t(".email or username"), :tabindex => 1, :value => params[:username] %>
     <%= f.password_field :password, :label => t(".password"), :tabindex => 2, :value => "", :help => link_to(t(".lost password link"), :controller => "passwords", :action => "lost_password") %>
@@ -20,9 +20,8 @@
 
     <%= f.primary t(".login_button"), :tabindex => 4 %>
   <% end %>
-
+<!-- commented out BELOW 20210824 by luciano
   <hr>
-
   <div id="loginForm">
     <div class="form-group">
       <label><%= t ".with external" %></label>
@@ -44,6 +43,7 @@
         <% if Settings.key?(:wikipedia_auth_id) -%>
         <li><%= auth_button "wikipedia", "wikipedia" %></li>
         <% end -%>
+        <li><%= auth_button "yahoo", "openid", :openid_url => "yahoo.com" %></li>
         <li><%= auth_button "wordpress", "openid", :openid_url => "wordpress.com" %></li>
         <li><%= auth_button "aol", "openid", :openid_url => "aol.com" %></li>
       </ul>
@@ -51,8 +51,8 @@
       <%= form_tag(auth_path(:provider => "openid"), :id => "openid_login_form") do %>
         <div id='login_openid_url' class="form-group">
           <label for='openid_url'><%= t ".openid_html", :logo => openid_logo %></label>
-          <%= hidden_field_tag("referer", params[:referer], :autocomplete => "off") %>
-          <%= text_field_tag("openid_url", "", :tabindex => 3, :autocomplete => "on", :class => "openid_url form-control") %>
+          <%= hidden_field_tag("referer", params[:referer]) %>
+          <%= text_field_tag("openid_url", "", :tabindex => 3, :class => "openid_url form-control") %>
           <span class="form-text text-muted">(<a href="<%= t "users.account.openid.link" %>" target="_new"><%= t "users.account.openid.link text" %></a>)</span>
         </div>
 
@@ -60,4 +60,5 @@
       <% end %>
     </div>
   </div>
+-- commented out ABOVE 20210824 by luciano -->
 </div>

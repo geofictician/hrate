@@ -102,6 +102,7 @@ $(document).ready(function () {
   L.OSM.zoom({ position: position })
     .addTo(map);
 
+/* ************* line added 20210729 by luciano, comments out FOLLOWING *******************
   var locate = L.control.locate({
     position: position,
     icon: "icon geolocate",
@@ -123,6 +124,7 @@ $(document).ready(function () {
     .attr("href", "#")
     .removeClass("leaflet-bar-part leaflet-bar-part-single")
     .addClass("control-button");
+/**************** line added 20210729 by luciano, comments out ABOVE ***********************/
 
   var sidebar = L.OSM.sidebar("#map-ui")
     .addTo(map);
@@ -133,6 +135,7 @@ $(document).ready(function () {
     sidebar: sidebar
   }).addTo(map);
 
+/* ************* line added 20210729 by luciano, comments out FOLLOWING *******************
   L.OSM.key({
     position: position,
     sidebar: sidebar
@@ -148,6 +151,7 @@ $(document).ready(function () {
     position: position,
     sidebar: sidebar
   }).addTo(map);
+/**************** line added 20210729 by luciano, comments out ABOVE ***********************/
 
   L.OSM.query({
     position: position,

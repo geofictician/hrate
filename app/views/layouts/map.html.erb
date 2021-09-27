@@ -16,13 +16,17 @@
   <% end %>
 <% end %>
 
+<% if false #--- line added 20210729 by luciano, comments out FOLLOWING ---------------------------------------------------  %>
 <% content_for :header do %>
   <%= render :partial => "layouts/search", :locals => { :autofocus => false } %>
 <% end %>
+<% end #-------- line added 20210729 by luciano, comments out ABOVE -------------------------------------------------------  %>
 
 <% content_for :content do %>
   <div id="sidebar">
+<% if false #--- line added 20210729 by luciano, comments out FOLLOWING ---------------------------------------------------  %>
     <%= render :partial => "layouts/search", :locals => { :autofocus => true } %>
+<% end #-------- line added 20210729 by luciano, comments out ABOVE -------------------------------------------------------  %>
 
     <div id="flash">
       <%= render :partial => "layouts/flash" %>
