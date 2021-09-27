@@ -1,3 +1,20 @@
+# The OGF Rails Port
+
+This is the opengeofiction fork of the [openstreetmap-website](https://github.com/openstreetmap/openstreetmap-website).
+It powers the [opengeofiction.net website](https://opengeofiction.net/about), which uses the OSM software "stack" to implement
+a website where people can draw imaginary digital maps on a shared, imaginary world.
+
+The customization of the OSM Rails Port is currently quite ad hoc and quite specific to the opengeofiction application,
+but our long term intention is to develop this fork to better enable anyone interested in using the OSM stack
+for geofiction to set up their own server.
+
+Contact information for the team of volunteers who host and run the opengeofiction website is found [here](https://opengeofiction.net/contact).
+
+Installation of the site can be done following the current INSTALL.md referenced below. A geofiction-specific INSTALL will eventually be written, including
+instruction for how to set up the render (which is a must-have for a alternate planet), overpass (a data query system), and other ancilliary pieces of the
+OSM stack.
+
+#Everything below this line is the openstreetmap-website README.md : 'The Rails Port'
 # openstreetmap-website
 
 [![Lint](https://github.com/openstreetmap/openstreetmap-website/workflows/Lint/badge.svg?branch=master&event=push)](https://github.com/openstreetmap/openstreetmap-website/actions?query=workflow%3ALint%20branch%3Amaster%20event%3Apush)
