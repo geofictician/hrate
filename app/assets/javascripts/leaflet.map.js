@@ -67,6 +67,55 @@ L.OSM.Map = L.Map.extend({
 
     this.baseLayers = [];
 
+// FOLLOWING added 20210719 by luciano **********************************
+    this.baseLayers.push(new L.OSM.OGFCarto({
+      attribution: "Tiles and data courtesy <a href='http://opengeofiction.net/copyright' target='_blank'>OpenGeofiction</a> and contributors.",
+      code: "B",
+      keyid: "ogf-carto",
+      name: I18n.t("javascripts.map.base.ogf-carto")
+    }));
+
+/******  FOLLOWING commented out 20210802 by luciano *************************
+    this.baseLayers.push(new L.OSM.Arhet2Carto({
+      attribution: "Tiles and data created by <a href='http://geofictician.net/about.html' target='_blank'>Geofictician</a> on the OSM platform, including creative re-use of data shared by OpenStreetMap contributors.",
+      code: "W",
+      keyid: "arhet2-carto",
+      name: I18n.t("javascripts.map.base.arhet2-carto")
+    }));
+
+    this.baseLayers.push(new L.OSM.ArhetTopo({
+      attribution: "Tiles and data created by <a href='http://geofictician.net/about.html' target='_blank'>Geofictician</a> on the OSM platform, including creative re-use of data shared by OpenStreetMap contributors.",
+      code: "Z",
+      keyid: "arhet-topo",
+      name: I18n.t("javascripts.map.base.arhet-topo")
+    }));
+// ******  ABOVE commented out 20210802 by luciano **************************/
+    this.baseLayers.push(new L.OSM.OGFTopo({
+      attribution: "Tiles and data courtesy <a href='http://opengeofiction.net/copyright' target='_blank'>OpenGeofiction</a> and contributors.",
+      code: "V",
+      keyid: "ogf-topo",
+      name: I18n.t("javascripts.map.base.ogf-topo")
+    }));
+
+/******  FOLLOWING commented out 20210802 by luciano *************************
+    this.baseLayers.push(new L.OSM.OgieffCartoSource({
+      attribution: "Tiles and data courtesy <a href='http://opengeofiction.net/copyright' target='_blank'>OpenGeofiction</a> and contributors.",
+      code: "F",
+      keyid: "ogieff-carto",
+      name: I18n.t("javascripts.map.base.ogieff-carto")
+    }));
+// ******  ABOVE commented out 20210802 by luciano **************************/
+    this.baseLayers.push(new L.OSM.EarthCarto({
+      attribution: copyright + " &hearts; " + donate + ". " + terms,
+      code: "X",
+      keyid: "earth-carto",
+      name: I18n.t("javascripts.map.base.earth-carto")
+    }));
+
+// ABOVE added 20210719 by luciano **********************************
+
+/******  FOLLOWING commented out 20210719 by luciano *************************
+
     this.baseLayers.push(new L.OSM.Mapnik({
       attribution: copyright + " &hearts; " + donate + ". " + terms,
       code: "M",
@@ -116,6 +165,8 @@ L.OSM.Map = L.Map.extend({
       name: I18n.t("javascripts.map.base.hot")
     }));
 
+// ******  ABOVE commented out 20210719 by luciano **************************/
+
     this.noteLayer = new L.FeatureGroup();
     this.noteLayer.options = { code: "N" };
 
@@ -135,8 +186,9 @@ L.OSM.Map = L.Map.extend({
     });
   },
 
+// 2nd line below modified 20210719 by luciano ****************
   updateLayers: function (layerParam) {
-    var layers = layerParam || "M",
+    var layers = layerParam || "B",
         layersAdded = "";
 
     for (var i = this.baseLayers.length - 1; i >= 0; i--) {
@@ -230,8 +282,9 @@ L.OSM.Map = L.Map.extend({
       return (interlaced_x << 1) | interlaced_y;
     }
 
+// 2nd line below modified 20210719 by luciano ****************
     var params = {};
-    var layers = this.getLayersCode().replace("M", "");
+    var layers = this.getLayersCode().replace("B", "");
 
     if (layers) {
       params.layers = layers;

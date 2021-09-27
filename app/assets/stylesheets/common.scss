@@ -7,7 +7,15 @@
 /* Default rules for the body of every page */
 
 body {
+  font-family: 'Helvetica Neue',Arial,sans-serif;
   font-size: $typeheight;
+  line-height: 1.6666;
+  color: #222;
+  background-color: $headerBGColor; /* modified 20210729 by luciano */
+  margin: 0px;
+  padding: 0px;
+  text-align: left;
+  height: 100%;
 }
 
 p > img {
@@ -127,7 +135,7 @@ header {
 
 nav.primary {
   & > .btn-group .btn-outline-primary {
-    @include button-outline-variant($green, $color-hover: $white, $active-color: $white);
+    @include button-outline-variant($maroon, $color-hover: $white, $active-color: $white);
   }
 
   .disabled {
@@ -140,7 +148,7 @@ nav.primary {
       }
 
       &:hover {
-        background-color: lighten($green, 30%);
+        background-color: lighten($maroon, 30%);
       }
     }
   }
@@ -148,11 +156,11 @@ nav.primary {
   // Small tweaks to the toggle to stop the primary colour showing through
   // when the menu is shown
   .show > .btn-outline-primary.dropdown-toggle {
-    background-color: $green;
-    border-color: $green;
+    background-color: $maroon;
+    border-color: $maroon;
 
     &:focus {
-      box-shadow: 0 0 0 0.2rem fade-out($green, 0.5);
+      box-shadow: 0 0 0 0.2rem fade-out($maroon, 0.5);
     }
   }
 }
@@ -175,7 +183,7 @@ nav.secondary {
 nav.primary, nav.secondary {
   .dropdown-item {
     &:hover, &:active {
-      background-color: $green;
+      background-color: $maroon;
       color: white;
     }
   }
@@ -256,7 +264,7 @@ body.small-nav {
 /* Utility for styling notification numbers */
 
 .count-number {
-  background: lighten($green, 30%);
+  background: lighten($maroon, 30%);
   color: $gray-800;
   font-weight: $font-weight-normal;
 }
@@ -293,7 +301,7 @@ body.small-nav {
   }
 
   &.active {
-    background-color: $vibrant-green;
+    background-color: $vibrant-maroon;
   }
 
   &-first {
@@ -467,10 +475,10 @@ body.small-nav {
         }
       }
 
-      &.active { border-color: darken($green, 10%); }
+      &.active { border-color: darken($maroon, 10%); }
       &:hover {
         border-color: $grey;
-        &.active { border-color: darken($green, 20%); }
+        &.active { border-color: darken($maroon, 20%); }
       }
     }
   }
@@ -510,7 +518,7 @@ body.small-nav {
 
 /* Rules for attribution text under the main map shown on printouts */
 
-.donate-attr { color: darken($green, 10%) !important; }
+.donate-attr { color: darken($maroon, 10%) !important; }
 
 /* Rules for the sidebar */
 
@@ -741,18 +749,27 @@ tr.turn:hover {
 
 .content-inner {
   position: relative;
-  max-width: 960px;
+  max-width: 900px;
   margin: auto;
   padding: $lineheight;
 }
 
 /* Overrides for pages that use new layout conventions */
 
+.users-new,
+.users-create,
+.users-terms,
+.users-confirm {
+  .content-heading .content-inner {
+    height: 200px;
+  }
+}
+
 .header-illustration {
   background-position: 0 0;
   background-repeat: no-repeat;
-  position: relative;
-  min-height: 200px;
+  position: absolute;
+  height: 200px;
   width: 100%;
   left: 0;
   bottom: 0;
@@ -772,10 +789,9 @@ tr.turn:hover {
   &.new-user-arm {
     height: 110px;
     width: 130px;
-    left: 280px;
-    top: 180px;
+    left: 260px;
+    top: 160px;
     background-image: image-url("sign-up-illustration-arm.png");
-    position: absolute;
     z-index: 100;
     pointer-events: none;
   }
@@ -1023,25 +1039,48 @@ div.secondary-actions {
   }
 
   .attr {
+    position: relative;
+    padding: 170px 40px 20px;
+    background: #333;
+    background: rgba(0, 0, 0, .8);
+    margin-bottom: 0;
     margin-top: -20px;
 
     h1 {
+      display: block;
+      color: white;
+      font-weight: 300;
+      font-size: 28px;
       span {
-        color: $vibrant-green;
+        color: $vibrant-maroon;
       }
     }
 
     .user-image {
+      position: absolute;
+      top: 0px;
+      right: 240px;
+      left: 0px;
       height: 150px;
       background-position: 0 50%;
       background-repeat: no-repeat;
       background-image: image-url('about/osm.png');
       background-size: cover;
-      background-color: $vibrant-green;
+      background-color: $vibrant-maroon;
     }
 
     .byosm {
-      background: $vibrant-green;
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      z-index: 1;
+      width: 240px;
+      height: 150px;
+      padding: 20px 20px 20px 40px;
+      font: 500 20px/24px Helvetica, Arial, sans-serif;
+      white-space: nowrap;
+      color: #fff;
+      background: $vibrant-maroon;
     }
 
     .byosm span {

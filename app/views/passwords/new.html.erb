@@ -1,10 +1,11 @@
+<%# file altered 20210904 by luciano %>
 <% content_for :heading do %>
   <h1><%= t ".heading" %></h1>
 <% end %>
 
-<p><%= t ".help_text" %></p>
-
 <%= bootstrap_form_tag do |f| %>
+  <p><%= t ".help_text" %> <a href="https://wiki.opengeofiction.net/index.php/Opengeofiction:Terms_of_Use">Terms of Use</a>
+  and <a href="https://wiki.opengeofiction.net/index.php/Opengeofiction:Contributor_Terms">Contributor Terms</a>.</p>
   <%= f.text_field :email, :label => t(".email address") %>
   <%= f.primary t(".new password button") %>
 <% end %>

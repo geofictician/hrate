@@ -3,6 +3,7 @@
   <%= @text["next_with_decline"] %>
 </p>
 <h3><%= @text["introduction"] %></h3>
+<!--  file completely altered 20210827 by luciano -->
 <ol>
   <li>
     <p><%= @text["section_1"] %></p>
@@ -10,6 +11,8 @@
     <ol>
       <li><%= @text["section_1a"] %></li>
       <li><%= @text["section_1b"] %></li>
+      <li><%= @text["section_1c"] %></li>
+      <li><%= @text["section_1d"] %></li>
     </ol>
     <% end %>
   </li>
@@ -18,28 +21,27 @@
 <ol start="2">
   <li>
     <p><%= @text["section_2"] %></p>
+    <% unless @text['section_2a'].nil? %>
+    <ol>
+      <li><%= @text["section_2a"] %></li>
+      <li><%= @text["section_2b"] %></li>
+      <li><%= @text["section_2c"] %></li>
+      <li><%= @text["section_2d"] %></li>
+    </ol>
+    <% end %>
   </li>
-  <li>
-    <p><%= @text["section_3"] %></p>
-    <p><%= @text["active_defn_1"] %></p>
-    <p><%= @text["active_defn_2"] %></p>
-    </ul>
-  </li>
-  <li>
-    <p><%= @text["section_4"] %></p>
-  </li>
-  <li>
-    <p><%= @text["section_5"] %></p>
-  </li>
-</ol>
-<h3><%= @text["limitation_of_liability"] %></h3>
-<ol start="6">
-  <li><p><%= @text["section_6"] %></p></li>
-  <li><p><%= @text["section_7"] %></p></li>
 </ol>
 <h3><%= @text["miscellaneous"] %></h3>
-<ol start="8">
+<ol start="3">
   <li>
-    <p id="last"><%= @text["section_8"] %></p>
+    <p id="last"><%= @text["section_3"] %></p>
+    <% unless @text['section_3a'].nil? %>
+    <ol>
+      <li><%= @text["section_3a"] %></li>
+      <li><%= @text["section_3b"] %></li>
+      <li><%= @text["section_3c"] %></li>
+      <li><%= @text["section_3d"] %></li>
+    </ol>
+    <% end %>
   </li>
 </ol>

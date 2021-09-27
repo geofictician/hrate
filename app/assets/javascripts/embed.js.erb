@@ -37,18 +37,19 @@ window.onload = function () {
   map.attributionControl.setPrefix('');
   map.removeControl(map.attributionControl);
 
-  if (!args.layer || args.layer === "mapnik" || args.layer === "osmarender" || args.layer === "mapquest") {
-    new L.OSM.Mapnik(mapnikOptions).addTo(map);
-  } else if (args.layer === "cyclosm") {
-    new L.OSM.CyclOSM().addTo(map);
-  } else if (args.layer === "cyclemap" || args.layer === "cycle map") {
-    new L.OSM.CycleMap(thunderforestOptions).addTo(map);
-  } else if (args.layer === "transportmap") {
-    new L.OSM.TransportMap(thunderforestOptions).addTo(map);
-  } else if (args.layer === "opnvkarte") {
-    new L.OSM.OPNVKarte().addTo(map);
-  } else if (args.layer === "hot") {
-    new L.OSM.HOT().addTo(map);
+<%# following block (11 lines) re-written 20210719 by luciano %>
+  if (!args.layer {
+    new L.OSM.OGFCarto().addTo(map);
+<%#  } else if (args.layer === "arhet2-carto") {  %>
+<%#    new L.OSM.Arhet2Carto().addTo(map);  %>
+<%#  } else if (args.layer === "arhet-topo") { %>
+<%#    new L.OSM.ArhetTopo().addTo(map);       %>
+     } else if (args.layer === "ogf-topo") {
+       new L.OSM.OGFTopo().addTo(map);   
+<%#  } else if (args.layer === "ogieff-carto") {   %>
+<%#    new L.OSM.OgieffCartoSource().addTo(map);   %>
+  } else if (args.layer === "earth-carto") {
+    new L.OSM.EarthCarto().addTo(map);
   }
 
   if (args.marker) {

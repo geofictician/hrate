@@ -4,17 +4,21 @@
 
 <% content_for :heading_class, "pb-0" %>
 <% content_for :heading do %>
+<!--  commented out BELOW 20210827 by luciano
   <div class='header-illustration new-user-main'>
     <h1><%= t ".title" %></h1>
   </div>
   <div class='header-illustration new-user-arm d-none d-md-block'></div>
+--  commented out ABOVE 20210827 by luciano -->
 <% end %>
 
 <div class="row">
   <div class='text-muted col-sm order-sm-2'>
+<!--  commented out BELOW 20210827 by luciano
     <h4><%= t ".about.header" %></h4>
     <p><%= t ".about.paragraph_1" %></p>
     <p><%= t ".about.paragraph_2" %></p>
+--  commented out ABOVE 20210827 by luciano -->
   </div>
 
   <div class="col-sm">
@@ -42,9 +46,11 @@
       <%= f.password_field :pass_crypt, :tabindex => 6 %>
       <%= f.password_field :pass_crypt_confirmation, :tabindex => 7 %>
 
+<!--  commented out BELOW 20210827 by luciano
       <div id="auth_prompt">
         <p><%= link_to t(".use external auth"), "#", :id => "auth_enable" %></p>
       </div>
+--  commented out ABOVE 20210827 by luciano -->
 
       <%= f.primary t(".continue"), :tabindex => 8 %>
     <% end %>

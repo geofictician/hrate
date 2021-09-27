@@ -129,6 +129,7 @@ $(document).ready(function () {
       layers: map.baseLayers,
       sidebar: sidebar
     }),
+  /* ************* line added 20210729 by luciano, comments out FOLLOWING *******************
     L.OSM.key({
       position: position,
       sidebar: sidebar
@@ -145,6 +146,7 @@ $(document).ready(function () {
       position: position,
       sidebar: sidebar
     })
+/**************** line added 20210729 by luciano, comments out ABOVE ***********************/
   ]);
 
   addControlGroup([
