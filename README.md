@@ -14,7 +14,7 @@ Installation of the site can be done following the current INSTALL.md referenced
 instruction for how to set up the render (which is a must-have for a alternate planet), overpass (a data query system), and other ancilliary pieces of the 
 OSM stack.
 
-#Everything below this line is the openstreetmap-website README.md : 'The Rails Port'
+# Everything below this line is the openstreetmap-website README.md : 'The Rails Port'
 
 [![Lint](https://github.com/openstreetmap/openstreetmap-website/workflows/Lint/badge.svg?branch=master&event=push)](https://github.com/openstreetmap/openstreetmap-website/actions?query=workflow%3ALint%20branch%3Amaster%20event%3Apush)
 [![Tests](https://github.com/openstreetmap/openstreetmap-website/workflows/Tests/badge.svg?branch=master&event=push)](https://github.com/openstreetmap/openstreetmap-website/actions?query=workflow%3ATests%20branch%3Amaster%20event%3Apush)
