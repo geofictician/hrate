@@ -92,7 +92,8 @@ module BrowseTagsHelper
     end
 
     {
-      :url => "https://#{lang}.wikipedia.org/wiki/#{value}?uselang=#{I18n.locale}#{encoded_section}",
+      #:url => "https://#{lang}.wikipedia.org/wiki/#{value}?uselang=#{I18n.locale}#{encoded_section}",
+      :url => "https://wiki.opengeofiction.net/wiki/index.php/#{value}",
       :title => value + section
     }
   end
